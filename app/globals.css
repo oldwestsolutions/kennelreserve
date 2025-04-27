@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e9efe0; /* Light sage background instead of white */
+  --background-alt: #e5eadb; /* Lighter alternative background */
+  --foreground: #3d3426; /* Rich dark brown for text */
+  --primary: #4a7c59; /* Forest green as primary */
+  --primary-light: #8cb369; /* Light green */
+  --primary-dark: #39603d; /* Dark green */
+  --secondary: #b68f40; /* Warm gold/tan */
+  --tertiary: #c2b097; /* Taupe/beige */
+  --gray-light: #dde2d5; /* Light sage/gray */
+  --gray-medium: #929986; /* Muted sage/gray */
+  --gray-dark: #595e56; /* Dark gray with green undertone */
+  --accent: #d9c589; /* Light gold accent */
+  --panel: #cad6ba; /* Sage panel background */
+  --turtle-green: #5f8d6b; /* Franklin-inspired turtle green */
+  --luxury-brown: #6e5a41; /* Rich brown for luxury feel */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-accent: var(--accent);
+  --color-panel: var(--panel);
+  --color-turtle: var(--turtle-green);
+  --color-luxury: var(--luxury-brown);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2a382b; /* Dark green instead of black */
+    --background-alt: #30392e; /* Darker alternative background */
+    --foreground: #e6e8e1; /* Light sage for text */
+    --primary: #8cb369; /* Light green as primary in dark mode */
+    --primary-light: #39603d; /* Dark green becomes light */
+    --primary-dark: #b4c4a4; /* Medium sage */
+    --secondary: #d9b44a; /* Brighter gold */
+    --tertiary: #86765c; /* Darker taupe */
+    --gray-light: #3d4d3e; /* Dark sage */
+    --gray-medium: #738068; /* Medium sage */
+    --gray-dark: #d9d7cb; /* Light beige */
+    --accent: #e6c75c; /* Brighter gold accent */
+    --panel: #3a4d3c; /* Dark green panel background */
+    --turtle-green: #5a8c6d; /* Darker turtle green */
+    --luxury-brown: #8c7a61; /* Lighter luxury brown for dark mode */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  /* Enhanced texture for the Franklin turtle PBS feel */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%235f8d6b' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    letter-spacing: 0.01em;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--luxury-brown);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary);
+  }
+  
+  /* Rounder corners throughout the app for friendly PBS look */
+  .rounded-lg {
+    border-radius: 1.25rem;
+  }
+  
+  .rounded-md {
+    border-radius: 0.875rem;
+  }
+  
+  /* Softer shadows for animation style */
+  .shadow-md {
+    box-shadow: 0 5px 15px rgba(89, 94, 86, 0.15);
+  }
+
+  /* PBS-style buttons */
+  button, .btn {
+    border-radius: 0.875rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button:hover, .btn:hover {
+    transform: scale(1.05);
+  }
+}
+
+@layer utilities {
+  .transition-standard {
+    transition: all 0.25s ease-in-out;
+  }
+  
+  /* Animation friendly hover effect */
+  .hover-grow {
+    transition: transform 0.2s ease;
+  }
+  
+  .hover-grow:hover {
+    transform: scale(1.05);
+  }
+
+  /* Franklin-inspired outline */
+  .franklin-outline {
+    border: 2px solid var(--turtle-green);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .franklin-outline:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(95, 141, 107, 0.2);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-light);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--turtle-green);
+  border-radius: 10px;
+  border: 3px solid var(--gray-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
